@@ -1,6 +1,6 @@
 %define name oracle-rdbms-server-11gR2-preinstall 
 %define version 1.0
-%define release 4.el7
+%define release 4.wmcd.el7
 
 
 
@@ -21,7 +21,7 @@ Requires(pre):/etc/redhat-release
 Requires:procps module-init-tools ethtool initscripts 
 Requires:bind-utils nfs-utils util-linux-ng pam
 Requires:xorg-x11-utils xorg-x11-xauth 
-Requires:kernel-uek
+Requires:kernel
 Requires:smartmontools
 
 # Per Orabug 20063241
@@ -109,6 +109,9 @@ fi
 /etc/sysconfig/%{name}
 
 %changelog
+* Sat May 7 2016 Will McDonald <wmcdonald@gmail.com> [1.0-4.wmcd.el7]
+      - Removed the Oracle UEK dependecy for use on other EL variants
+
 * Tue Oct 13 2015 Vasundhara V <vasundhara.venkatasubramanian@oracle.com> [1.0-4.el7]
       - Fix for Orabugs 20676277, 20675405, 20095949
       - Fix for Orabug 17797216 

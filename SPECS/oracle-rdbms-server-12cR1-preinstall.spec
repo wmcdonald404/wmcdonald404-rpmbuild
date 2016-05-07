@@ -1,6 +1,6 @@
 %define name oracle-rdbms-server-12cR1-preinstall 
 %define version 1.0
-%define release 4.el7
+%define release 4.wmcd.el7
 
 
 
@@ -21,7 +21,7 @@ Requires(pre):/etc/redhat-release
 Requires:procps module-init-tools ethtool initscripts 
 Requires:bind-utils nfs-utils util-linux-ng pam
 Requires:xorg-x11-utils xorg-x11-xauth 
-Requires:kernel-uek
+Requires:kernel
 Requires:smartmontools
 
 
@@ -115,6 +115,9 @@ fi
 /usr/bin/oracle-rdbms-server-12cR1-preinstall-verify
 
 %changelog
+* Sat May 7 2016  Will McDonald <wmcdonald@gmail.com> [1.0-4.wmcd.el7]
+ - Removed the Oracle UEK dependency for use on other EL variants
+
 * Wed Oct 14 2015  Vasundhara V <vasundhara.venkatasubramanian@oracle.com> [1.0-4.el7]
  - Backport of Orabugs 20676277, 20675405, 20095049
  - Added parameter net.ipv4.conf.all.rp_filter
